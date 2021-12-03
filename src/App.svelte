@@ -1,5 +1,6 @@
 <script>
   import Modal from "./Modal.svelte";
+  import AddPerson from "./AddPerson.svelte";
 
   let people = [
     { name: "", beltColour: "black", age: 25, id: 1 },
@@ -25,12 +26,9 @@
   <p>not greater than 5</p>
 {/if} -->
 
-<Modal
-  message="Hey I am prop value."
-  isPromo={true}
-  {showModal}
-  on:click={toggleModal}
-/>
+<Modal isPromo={true} {showModal} on:click={toggleModal}>
+  <AddPerson />
+</Modal>
 
 <main>
   <button on:click|once={toggleModal}>Open Modal</button>

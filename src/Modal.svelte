@@ -1,5 +1,4 @@
 <script>
-  export let message;
   export let isPromo;
   export let showModal;
   /**
@@ -12,7 +11,11 @@
 {#if showModal}
   <div class="backdrop" class:promo={isPromo} on:click|self>
     <div class="modal">
-      <p>{message}</p>
+      <!-- <slot name="title" /> -->
+      <!-- <div slot="title">
+        <h3>Add a new person</h3>
+      </div> -->
+      <slot />
     </div>
   </div>
 {/if}
