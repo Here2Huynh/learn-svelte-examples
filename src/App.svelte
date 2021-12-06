@@ -16,6 +16,11 @@
   const toggleModal = () => {
     showModal = !showModal;
   };
+
+  const handleAddPerson = (e) => {
+    people = [e.detail, ...people];
+    showModal = false;
+  };
 </script>
 
 <!-- {#if num > 20}
@@ -27,7 +32,7 @@
 {/if} -->
 
 <Modal isPromo={true} {showModal} on:click={toggleModal}>
-  <AddPerson />
+  <AddPerson on:addPerson={handleAddPerson} />
 </Modal>
 
 <main>
